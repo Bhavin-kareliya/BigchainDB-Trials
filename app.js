@@ -8,12 +8,12 @@ const conn = new driver.Connection(API_PATH)
 //const KEY_NAME = new driver.Ed25519Keypair()
 
 const jekin = {
-    publicKey: '7sibuyVJpg7bKovn41JmDamPpHHJnraNztGChFaqfc3D',
-    privateKey: '2GQxgojF1ipRpmk6wpcVGE9rbxZLo4CJN6qBPMQH5gPS'
+    publicKey: '********************************************',
+    privateKey: '********************************************'
 }
 const bhavin = {
-    publicKey: '4iLU594Lnf54vyFyWLEogHG1F4nCDPhqGacj8c1LFGty',
-    privateKey: 'BhozJJaxX7xxp4SXhQWDCzjpv7jixhCgvBx2yrtkoW9m'
+    publicKey: '********************************************',
+    privateKey: '********************************************'
 }
 const segment = {
     name: "Package-1",
