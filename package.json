@@ -1,0 +1,22 @@
+{
+  "name": "bigchaindb-trials",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhavin-kareliya/BigchainDB-Trials.git"
+  },
+  "author": "Bhavin-Kareliya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bhavin-kareliya/BigchainDB-Trials/issues"
+  },
+  "homepage": "https://github.com/Bhavin-kareliya/BigchainDB-Trials#readme",
+  "dependencies": {
+    "bigchaindb-driver": "^4.2.2"
+  }
+}
