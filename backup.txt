@@ -1,5 +1,5 @@
 const driver = require('bigchaindb-driver')
-//const { Ed25519Sha256 } = require('crypto-conditions');
+const { Ed25519Sha256 } = require('crypto-conditions');
 
 const API_PATH = 'https://test.ipdb.io/api/v1/'
 const conn = new driver.Connection(API_PATH)
@@ -23,13 +23,11 @@ const segment = {
 }
 
 const transactionId = "99bc4d73ca8342c1fa54f31ed42a364bec074e715e961f77e1b6c5cb1de9487b";
-const transactionId2 = "067a5fd719e75cd3c1338c244cdd6c230394d8abee0cbd72ed7bccd60b15f493";
-const assetId = "067a5fd719e75cd3c1338c244cdd6c230394d8abee0cbd72ed7bccd60b15f493";
 
 //Functions
-//makeTransaction(segment)
+makeTransaction(segment)
 //transferOwnership(transactionId, jekin)
-listTransactions(assetId)
+//listTransactions("d26218937a16aa6d11e9eb7644536dc82af2cac1bfedeaa81d89359ba52183fc")
 
 function makeTransaction(payload) {
     const tx = driver.Transaction.makeCreateTransaction(
@@ -80,12 +78,14 @@ function transferOwnership(transacctionId, newOwner) {
             const signedTransfer = driver.Transaction.signTransaction(createTranfer, jekin.privateKey)
             return conn.postTransactionCommit(signedTransfer)
         })
-        .then(res => { console.log('Transaction ownership successfully posted by hash ', res.id) })
-        .catch(err => { console.error(err) })
+        .then(res => {
+            console.log('Transaction', res.id, 'successfully posted.')
+        })
+        .catch(err => {
+            console.error(err)
+        })
 }
 
-function listTransactions(assetId) {
-    conn.listTransactions(assetId)
-        .then(res => console.log(res))
-        .catch(err => console.error(error))
+function listTransactions(publicId) {
+    conn.listTransactions(publicId).then(res => console.log(res))
 }
